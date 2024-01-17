@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniffing Packets | Radical Networks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fullscreen Background Video -->
+    <video autoplay muted loop id="bg-vid">
+        <source src="video/386943.webm">
+    </video>
+
+    <section class="container">
+        <div class="left">
+            <h1>Sniffing Packets</h1>
+            <p>Scan this code with your phone to begin.</p>
+            <div class="qr">
+                <img src="img/qrcode.svg" alt="QR code for Wi">
+                <p>UnradicalNetwork</p>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+
+        <div class="next">
+            <a class="button" id="info">Was is das?</a>
+        </div>
+
+    </section>
+
+    <!-- Didactic Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>In networking, applications often split data into smaller pieces, called <em>packets</em>, to make them
+                easier to send and receive. Packets can be sent “out of order” and reassembled on the other side.</p>
+            <p><em>Packet sniffing</em> refers to the process of monitoring or inspecting packet data. Network
+                administrators use packet sniffing to monitor the health of their networks and troubleshoot any issues.
+                Some people use it for...more nefarious purposes.</p>
+            <p>This project takes the term <em>sniffing</em> literally, wondering what it would be like to actually
+                smell your data.</p>
+        </div>
+
+    </div>
+
+    <!-- link to app.js -->
+    <script src="app.js"></script>
+</body>
+
+</html>

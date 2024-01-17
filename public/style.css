@@ -1,0 +1,198 @@
+body {
+    background-color: #E1CEFF;
+    background-image: url("img/test_bg.png");
+    background-size: cover;
+    font-family: 'space mono', monospace;
+    color: #14025B;
+}
+
+.container {
+    margin: auto 4rem;
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #14025B;
+    border-radius: 0.5rem;
+}
+
+.button {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4rem;
+    background-color: #14025B;
+    color: #E1CEFF;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #2c07be;
+}
+
+.back {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4rem;
+    border: none;
+    background-color: #ffdff890;
+    color: #14025B;
+    text-decoration: none;
+}
+
+.back:hover {
+    background-color: #ffdff8;
+}
+
+.info {
+    max-width: 60%;
+}
+
+.next {
+    margin-top: 2rem;
+}
+
+.next button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4rem;
+    border: none;
+    background-color: #14025B;
+    color: #E1CEFF;
+}
+
+
+.typewriter {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+
+    /* white-space: nowrap; */
+    /* Keeps the content on a single line */
+    /* margin: 0 auto; */
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.material {
+    display: inline;
+}
+
+.spacer {
+    border-bottom: 1px dotted #14025B;
+    flex-grow: 1;
+    margin: 0 1rem;
+}
+
+.quantity {
+    display: inline;
+}
+
+/* Fullscreen Background Video */
+video#bg-vid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+/* #bg-vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+} */
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
