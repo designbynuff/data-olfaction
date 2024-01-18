@@ -1,0 +1,104 @@
+{
+    "materials": [
+        {
+            "material": "White Tea",
+            "Category": "Mid",
+            "Description": "Rejuvenate and fight depression"
+        },
+        {
+            "material": "Cherry Blossoms",
+            "Category": "Mid",
+            "Description": "Improve insomnia and promote metabolism"
+        },
+        {
+            "material": "Ylang-Ylang",
+            "Category": "Mid",
+            "Description": "Lower blood pressure, relieve depression, soothe sthe spirit, shine hair, aphrodisiac"
+        },
+        {
+            "material": "Rose",
+            "Category": "Mid",
+            "Description": "Antibacterial, relievig spasm, sterilization, aphrodisiac, purification, sedation"
+        },
+        {
+            "material": "Gardenia",
+            "Category": "Mid",
+            "Description": "Purify the air to remove odors, soothe body and mind, regulate emotions"
+        },
+        {
+            "material": "Jasmine",
+            "Category": "Mid",
+            "Description": "Elegant smell, can soothe depressed mood, invigorate the spirit, and enhance self-confidence"
+        },
+        {
+            "material": "Violet",
+            "Category": "Mid",
+            "Description": "Antibacterial, aphrodisiac, sedative"
+        },
+        {
+            "material": "Neroli",
+            "Category": "Mid",
+            "Description": "Calms nerves, regulates insomnia, and can also improve neuralgia, headache and dizziness. Its delicate and gentle fragrance can most comfort women's emotions"
+        },
+        {
+            "material": "Peach",
+            "Category": "Mid",
+            "Description": "Warm emotions, inspire, aphrodisiac"
+        },
+        {
+            "material": "Bergamot",
+            "Category": "Top",
+            "Description": "Soothe mood, improve sleep"
+        },
+        {
+            "material": "Grapefruit",
+            "Category": "Top",
+            "Description": "Purify the air, soothe mood, improve sleep"
+        },
+        {
+            "material": "Cedar",
+            "Category": "Base",
+            "Description": "Remove the athlete's foot, reduce inflammation and antibacterial effect, improve sebum, relieve anxiety"
+        },
+        {
+            "material": "Cypress",
+            "Category": "Mid",
+            "Description": "Encourage the depressed heart, help meditation, soothe nervous tension and anxiety"
+        },
+        {
+            "material": "Sandalwood",
+            "Category": "Base",
+            "Description": "Fades scars, relaxes the body and mind, relaxes the nerves, improves the relatonship between husband and wife, and helps sleep"
+        },
+        {
+            "material": "Frankincense",
+            "Category": "Base",
+            "Description": "Woody aroma, relaxes and soothes, treats lymph, relieves dysmenorrhea, and reduces scars"
+        },
+        {
+            "material": "Tea Tree",
+            "Category": "Base",
+            "Description": "Disinfect and reduce inflammation, shrink pores, treat wind sensation, prevent infection, and restore vitality"
+        },
+        {
+            "material": "Eucalyptus",
+            "Category": "Base",
+            "Description": "Sterilization, skin calming, relieve muscle pain, relieve stress, relieve headache"
+        },
+        {
+            "material": "Mint",
+            "Category": "Mid",
+            "Description": "Promote digestion, strengthen concentration, relieve headaches, retieve pain and relieve colds"
+        },
+        {
+            "material": "Lemongrass",
+            "Category": "Mid",
+            "Description": "Skin beauty, skin calming, stable body and mind, relieve nose sensation, relieve headache"
+        },
+        {
+            "material": "Rosemary",
+            "Category": "Mid",
+            "Description": "Strengthen concentration, insecticidal effect, stabilize body and mind, promote digestion, prevent hair loss"
+        }
+    ]
+}
