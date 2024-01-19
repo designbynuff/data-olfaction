@@ -9,6 +9,15 @@ let device;
 
 let materials = [];
 
+// Declare top mid and base notes, JSON is killing me
+let topNotes = ['Bergamot', 'Grapefruit'];
+let midNotes = ['White Tea', 'Cherry Blossoms', 'Ylang-Ylang', 'Rose', 'Gardenia', 'Jasmine', 'Violet', 'Neroli', 'Peach', 'Cypress', 'Mint', 'Lemongrass', 'Rosemary'];
+let baseNotes = ['Cedar', 'Sandalwood', 'Frankincense', 'Tea Tree', 'Eucalyptus'];
+
+// Set #welcome-info and #formula-info to display none
+document.getElementById('welcome-container').style.display = 'none';
+document.getElementById('formula-container').style.display = 'none';
+
 window.addEventListener('load', () => {
     console.log('Page is loaded');
 
@@ -35,86 +44,40 @@ window.addEventListener('load', () => {
     });
 
 
+    console.log(topNotes);
+    console.log(midNotes);
+    console.log(baseNotes);
+
     // Load materials.json
-    fetch('data/materials.json')
-        .then(response => response.json())
-        .then(data => {
-            materials = data;
-            console.log(materials);
+    // fetch('data/materials.json')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // Push the data obejct into the materials array
+    //         materials = data.materials;
+    //         console.log(materials);
+    //     });
 
-            // Test randomFormula
-            randomFormula();
-        });
+    randomFormula();
 
-    //PORTAL SUBMISSION STUFF (MAYBE MOVE TO SEPARATE FUNCTIONS?)
-
-    // When input field has something in it, add right arrow arrow to button
-    nameField.addEventListener('input', () => {
-        if (nameField.value) {
-            nameButton.innerHTML = 'Ready →';
-        } else {
-            nameButton.innerHTML = 'Ready';
-        }
+    // When welcome-btn clicked, hide home-container and show welcome-container
+    document.getElementById('welcome-btn').addEventListener('click', () => {
+        console.log('welcome-btn clicked');
+        document.getElementById('home-container').style.display = 'none';
+        document.getElementById('welcome-container').style.display = 'block';
     });
 
-    // Execute a function when the user presses a key on the keyboard
-    nameField.addEventListener("keypress", function (event) {
-        // If the user presses the "Enter" key on the keyboard
-        if (event.key === "Enter") {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            nameButton.click();
-        }
+    // When formula-btn clicked, hide welcome-container and show formula-container
+    document.getElementById('formula-btn').addEventListener('click', () => {
+        console.log('formula-btn clicked');
+        document.getElementById('welcome-container').style.display = 'none';
+        document.getElementById('formula-container').style.display = 'block';
     });
 
-    // When button is clicked, get name
-    nameButton.addEventListener('click', () => {
-        // Get name from input field
-        userName = nameField.value;
-        console.log(userName);
-
-        // Get IP Address
-
-        // Get MAC Address
-
-        // Get Device Type
-
-
-        //     <div class="info">
-        //     <h1 class="typewriter">Welcome, <span id="name"></span></h1>
-        //     <p class="typewriter">Your MAC address is <span id="mac-address"></span></p>
-        //     <p class="typewriter">Your IP address is <span id="ip-address"></span></p>
-        //     <p class="typewriter">Your device is <span id="device"></span></p>
-        //     <p class="typewriter">Random animated text that makes it look like stuff is happening as we sniff your
-        //         packets for 30-60s</p>
-        // </div>
-
-        // Set Name in Welcome Page
-        document.getElementById('name').innerHTML = userName;
-
-        // Set MAC Address in Welcome Page
-        document.getElementById('mac-address').innerHTML = macAddress;
-
-        // Set IP Address in Welcome Page
-        document.getElementById('ip-address').innerHTML = ipAddress;
-
-        // Set Device Type in Welcome Page
-        document.getElementById('device').innerHTML = device;
-
-        // Set Amount of Time to Sniff Packets
-        let time = 30;
-
-        // Read Packets from File Every [Interval]
-
-        // For Each Packet, Create a Paragraph and Append to Info Div
-
-        // Once Packets Displayed, Show Button to Continue to Formula Page
-        document.getElementById('formula-btn').style.display = 'block';
-
+    // When reset-btn clicked, reload the page
+    document.getElementById('reset-btn').addEventListener('click', () => {
+        console.log('reset-btn clicked');
+        location.reload();
     });
-
-
 
 });
 
@@ -122,77 +85,142 @@ window.addEventListener('load', () => {
 
 function randomFormula() {
 
+    console.log('randomFormula function called', materials);
+
     let perfumeFormula = [];
     let maxDrops = 20;
 
+    // materials.forEach(element => {
+    //     console.log(element)
+    // });
+
+    console.log('maximum drops = ' + maxDrops);
+
     // Ensure materials is an array before using filter
-    if (!Array.isArray(materials)) {
-        console.error('Materials data not loaded yet.');
-        return;
-    }
+    // if (!Array.isArray(materials)) {
+    //     console.error('Materials data not loaded yet.');
+    //     return;
+    // }
 
     let maxBase = Math.floor(Math.random() * 3) + 1; // Set Maximum Base Notes between 1 and 3
+    console.log('maximum base notes = ' + maxBase);
+
     let maxTop = Math.floor(Math.random() * 5) + 4; // Set Maximum Top Notes between 4 and 8
+    console.log('maximum top notes = ' + maxTop);
+
     let maxMid = maxDrops - maxBase - maxTop; // Set Maximum Middle Notes to fill remaining drops
+    console.log('maximum mid notes = ' + maxMid);
 
     // Counters
     let currentDrops = 0;
+    console.log('current drops = ' + currentDrops);
+
     let currentBase = 0;
+    console.log('current base notes = ' + currentBase);
+
     let currentMid = 0;
+    console.log('current mid notes = ' + currentMid);
+
     let currentTop = 0;
+    console.log('current top notes = ' + currentTop);
 
-    // Go through materials and get all items whose category is 'base'
-    let baseNotes = materials.filter(material => material.category === 'base');
-    console.log(baseNotes);
+    // Create separate arrays for base, mid and top notes
+    // let baseNotes = [];
+    // let midNotes = [];
+    // let topNotes = [];
 
-    // Get Mid Notes
-    let midNotes = materials.filter(material => material.category === 'mid');
-    console.log(midNotes);
+    // for (let i = 0; i < materials.length; i++) {
+    //     let currentMaterial = materials[i];
 
-    // Get Top Notes
-    let topNotes = materials.filter(material => material.category === 'top');
-    console.log(topNotes);
+    //     if (currentMaterial.category === 'base') {
+    //         baseNotes.push(currentMaterial);
+    //     } else if (currentMaterial.category === 'mid') {
+    //         midNotes.push(currentMaterial);
+    //     } else if (currentMaterial.category === 'top') {
+    //         topNotes.push(currentMaterial);
+    //     }
+
+    //     i++;
+    // }
+
+
+
+    // console.log('Base Notes:', baseNotes);
+    // console.log('Mid Notes:', midNotes);
+    // console.log('Top Notes:', topNotes);
 
     // Add a random number of drops of a random base note to the formula, until maxBase is reached
     while (currentBase < maxBase) {
         let randomBase = baseNotes[Math.floor(Math.random() * baseNotes.length)];
-        let randomBaseDrops = Math.floor(Math.random() * 3) + 1;
+        console.log('picking ' + randomBase);
+
+        // Create a random number of drops between 1 and (maxBase - currentBase)
+        let randomBaseDrops = Math.floor(Math.random() * (maxBase - currentBase)) + 1;
+
         let base = {
-            name: randomBase.name,
+            name: randomBase,
             drops: randomBaseDrops
         };
+
+        console.log('adding ' + base.name + ' to formula');
+
         perfumeFormula.push(base);
+
+        console.log('formula is ' + JSON.stringify(perfumeFormula));
+
+
         currentBase += randomBaseDrops;
         currentDrops += randomBaseDrops;
+
+        console.log('current base drops = ' + currentDrops);
+        console.log('current base notes = ' + currentBase);
     }
 
     // Add a random number of drops of a random top note to the formula, until maxTop is reached
     while (currentTop < maxTop) {
         let randomTop = topNotes[Math.floor(Math.random() * topNotes.length)];
-        let randomTopDrops = Math.floor(Math.random() * 3) + 1;
+        console.log('picking ' + randomTop);
+
+        let randomTopDrops = Math.floor(Math.random() * (maxTop - currentTop)) + 1;
+
         let top = {
-            name: randomTop.name,
+            name: randomTop,
             drops: randomTopDrops
         };
         perfumeFormula.push(top);
+
+        console.log('formula is ' + JSON.stringify(perfumeFormula));
+
         currentTop += randomTopDrops;
         currentDrops += randomTopDrops;
+
+        console.log('current top drops = ' + currentDrops);
+        console.log('current top notes = ' + currentTop);
     }
 
     // Add a random number of drops of a random mid note to the formula, until maxDrops is reached
     while (currentDrops < maxDrops) {
         let randomMid = midNotes[Math.floor(Math.random() * midNotes.length)];
-        let randomMidDrops = Math.floor(Math.random() * 3) + 1;
+        console.log('picking ' + randomMid);
+
+        let randomMidDrops = Math.floor(Math.random() * (maxMid - currentMid)) + 1;
+
         let mid = {
-            name: randomMid.name,
+            name: randomMid,
             drops: randomMidDrops
         };
         perfumeFormula.push(mid);
+
+        console.log('formula is ' + JSON.stringify(perfumeFormula));
+
         currentMid += randomMidDrops;
         currentDrops += randomMidDrops;
+
+        console.log('current mid drops = ' + currentDrops);
+        console.log('current mid notes = ' + currentMid);
     }
 
-    console.log(perfumeFormula);
+    console.log('Final formula is ' + JSON.stringify(perfumeFormula));
 
     // Where there are multiple instances of the same note, add the number of drops and combine into one instance
     let uniqueFormula = perfumeFormula.reduce((acc, current) => {
@@ -205,7 +233,7 @@ function randomFormula() {
         }
     }, []);
 
-    console.log(uniqueFormula);
+    console.log('Unique formula: ' + JSON.stringify(uniqueFormula));
 
     // For each note in the formula, create a row div. In each row div, create a p element for the name, a spacer div and a p element for the number of drops
     uniqueFormula.forEach(note => {
@@ -218,7 +246,11 @@ function randomFormula() {
         spacer.classList.add('spacer');
         let quantity = document.createElement('p');
         quantity.classList.add('quantity');
-        quantity.innerHTML = note.drops;
+        if (note.drops === 1) {
+            quantity.innerHTML = note.drops + ' drop';
+        } else {
+            quantity.innerHTML = note.drops + ' drops';
+        }
         row.appendChild(material);
         row.appendChild(spacer);
         row.appendChild(quantity);

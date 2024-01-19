@@ -16,19 +16,51 @@
     </video>
 
     <section class="container">
-        <div class="left hero">
-            <h1 class>Sniffing<br>Packets</h1>
-            <p>Scan this code with your phone to begin, or join the “UnradicalNetwork” Wi-Fi.</p>
-            <div class="qr">
-                <img class="qr-code" src="img/qrcode.svg" alt="QR code for Wi">
-                <!-- <p>UnradicalNetwork</p> -->
+        <div id="home-container">
+            <div class="left hero">
+                <h1>Sniff</h1>
+                <h2>a data olfaction project</h2>
+                <p>Scan this code or join “UnradicalNetwork”.</p>
+                <div class="qr">
+                    <img class="qr-code" src="img/qrcode.svg" alt="QR code for Wi">
+                    <!-- <p>UnradicalNetwork</p> -->
+                </div>
+            </div>
+            <div class="right">
+            </div>
+            <div class="next">
+                <a class="button" id="welcome-btn">Continue →</a>
+                <a class="btn-outline" id="modal-btn">Was is das?</a>
             </div>
         </div>
-        <div class="right">
+
+        <!-- Welcome HTML -->
+        <div id="welcome-container">
+
+            <div class="info">
+                <h1 class="typewriter">Welcome!</h1>
+                <!-- Ideally, we'd have name input in the future so we can greet by name. -->
+                <p class="typewriter">Your MAC address is <span id="mac-address"></span></p>
+                <p class="typewriter">Your IP address is <span id="ip-address"></span></p>
+                <p class="typewriter">Your device is <span id="device"></span></p>
+                <p class="typewriter">Random animated text that makes it look like stuff is happening as we sniff your
+                    packets for 30-60s</p>
+            </div>
+            <div class="next">
+                <a class="button" id="formula-btn">Continue →</a>
+                <a class="btn-outline" id="reset-btn">Start Over</a>
+            </div>
         </div>
 
-        <div class="next">
-            <a class="button" id="modal-btn">Was is das?</a>
+        <!-- Formula HTML -->
+        <div id="formula-container" class="info">
+            <h1>Your Formula is Ready</h1>
+            <div id="formula">
+
+            </div>
+            <div class="next">
+                <a class="button" id="reset-btn">Start Over</a>
+            </div>
         </div>
 
     </section>

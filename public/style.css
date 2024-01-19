@@ -67,6 +67,21 @@ body {
     background-color: #2c07be;
 }
 
+.btn-outline {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4rem;
+    border: 1px solid #14025B;
+    color: #14025B;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background-color: #E1CEFF50;
+}
+
 .back {
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
@@ -225,6 +240,6 @@ video#bg-vid {
 }
 
 /* Hide Continue Button Until Ready to Show */
-#formula-btn {
+/* #formula-btn {
     display: none;
-}
+} */
