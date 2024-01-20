@@ -64,6 +64,7 @@ window.addEventListener('load', () => {
         console.log('welcome-btn clicked');
         document.getElementById('home-container').style.display = 'none';
         document.getElementById('welcome-container').style.display = 'block';
+        fakeData();
     });
 
     // When formula-btn clicked, hide welcome-container and show formula-container
@@ -76,6 +77,12 @@ window.addEventListener('load', () => {
     // When reset-btn clicked, reload the page
     document.getElementById('reset-btn').addEventListener('click', () => {
         console.log('reset-btn clicked');
+        location.reload();
+    });
+
+    // When restart-btn clicked, reload the page
+    document.getElementById('restart-btn').addEventListener('click', () => {
+        console.log('restart-btn clicked');
         location.reload();
     });
 
@@ -256,6 +263,129 @@ function randomFormula() {
         row.appendChild(quantity);
         document.getElementById('formula').appendChild(row);
     });
+
+}
+
+function fakeData() {
+    // Create a random fake MAC address
+
+    let welcome = document.getElementById('welcome-info');
+
+
+    let macAddress = '';
+    let macChars = '0123456789ABCDEF';
+    for (let i = 0; i < 12; i++) {
+        macAddress += macChars.charAt(Math.floor(Math.random() * macChars.length));
+    }
+    console.log(macAddress);
+
+    // inject the MAC address into the #mac-address span
+    document.getElementById('mac-address').innerHTML = macAddress;
+
+    // Create a random fake IP address with the format xxx.xxx.xxx.xxx, like 192.168.xxx.xxx or 10.0.xxx.xxx
+    let ipAddress = '';
+    let ipChars = '0123456789';
+    // Choose between 192.168.xxx.xxx and 10.0.xxx.xxx
+    let ipFirstOctet = Math.floor(Math.random() * 2);
+    console.log(ipFirstOctet);
+    if (ipFirstOctet === 0) {
+        ipAddress += '192.168.';
+    } else {
+        ipAddress += '10.0.';
+    }
+    // Generate the rest of the IP address
+    for (let i = 0; i < 2; i++) {
+        ipAddress += ipChars.charAt(Math.floor(Math.random() * ipChars.length));
+        if (i < 1) {
+            ipAddress += '.';
+        }
+    }
+    console.log("IP:", ipAddress);
+
+
+
+    // inject the IP address into the #ip-address span
+    document.getElementById('ip-address').innerHTML = ipAddress;
+
+    // Generate between 10 and 20 divs with the class "row"
+    let rows = Math.floor(Math.random() * 10) + 10;
+    console.log(rows);
+
+    for (let i = 0; i < rows; i++) {
+        let row = document.createElement('div');
+        row.classList.add('row');
+
+        // In each row, add a p element with the class "destination". Generate a random IP address and inject it into the p element
+        let destination = document.createElement('p');
+        destination.classList.add('destination');
+        let destinationAddress = '';
+        let destinationChars = '0123456789';
+        // Generate the IP address in the format xxx.xxx.xxx.xxx like 192.168.xxx.xxx or 10.0.xxx.xxx
+        // Decide whether to use 192.168 or 10.0
+        let destinationFirstOctet = Math.floor(Math.random() * 2);
+        console.log(destinationFirstOctet);
+        if (destinationFirstOctet === 0) {
+            destinationAddress += '192.168.';
+        } else {
+            destinationAddress += '10.0.';
+        }
+        // Generate the rest of the IP address
+        for (let i = 0; i < 2; i++) {
+            destinationAddress += destinationChars.charAt(Math.floor(Math.random() * destinationChars.length));
+            if (i < 1) {
+                destinationAddress += '.';
+            }
+        }
+
+
+
+        console.log(destinationAddress);
+        destination.innerHTML = destinationAddress;
+        row.appendChild(destination);
+
+        // add a spacer div
+        let spacer = document.createElement('div');
+        spacer.classList.add('spacer');
+        row.appendChild(spacer);
+
+        // In each row, add a p element with the class "port". Generate a random port number and inject it into the p element
+        let port = document.createElement('p');
+        port.classList.add('port');
+        let portNumber = Math.floor(Math.random() * 65535) + 1;
+        console.log(portNumber);
+        port.innerHTML = portNumber;
+        row.appendChild(port);
+
+        // add a small space
+        let spacer2 = document.createElement('div');
+        spacer2.classList.add('spacer');
+        row.appendChild(spacer2);
+
+
+        // In each row, add a p element with the class "protocol". Generate a random protocol and inject it into the p element
+        let protocol = document.createElement('p');
+        protocol.classList.add('protocol');
+        let protocols = ['TCP', 'UDP'];
+        let randomProtocol = protocols[Math.floor(Math.random() * protocols.length)];
+        console.log(randomProtocol);
+        protocol.innerHTML = randomProtocol;
+        row.appendChild(protocol);
+
+        // add a small space
+        let spacer3 = document.createElement('div');
+        spacer3.classList.add('spacer');
+        row.appendChild(spacer3);
+
+        // In each row, add a p element with the class "size". Generate a random file size in bytes and inject it into the p element
+        let size = document.createElement('p');
+        size.classList.add('size');
+        let fileSize = Math.floor(Math.random() * 100000000) + 1;
+        console.log(fileSize);
+        size.innerHTML = fileSize + ' bytes';
+        row.appendChild(size);
+
+        welcome.appendChild(row);
+    }
 
 }
 

@@ -243,3 +243,7 @@ video#bg-vid {
 /* #formula-btn {
     display: none;
 } */
+
+.welcome-container {
+    padding-bottom: 4rem;
+}
