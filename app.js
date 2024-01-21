@@ -313,11 +313,11 @@ function fakeData() {
 
     for (let i = 0; i < rows; i++) {
         let row = document.createElement('div');
-        row.classList.add('row');
+        row.classList.add('row-packets');
 
         // In each row, add a p element with the class "destination". Generate a random IP address and inject it into the p element
         let destination = document.createElement('p');
-        destination.classList.add('destination');
+        destination.classList.add('destination', 'typewriter');
         let destinationAddress = '';
         let destinationChars = '0123456789';
         // Generate the IP address in the format xxx.xxx.xxx.xxx like 192.168.xxx.xxx or 10.0.xxx.xxx
@@ -344,27 +344,27 @@ function fakeData() {
         row.appendChild(destination);
 
         // add a spacer div
-        let spacer = document.createElement('div');
-        spacer.classList.add('spacer');
-        row.appendChild(spacer);
+        // let spacer = document.createElement('div');
+        // spacer.classList.add('spacer');
+        // row.appendChild(spacer);
 
         // In each row, add a p element with the class "port". Generate a random port number and inject it into the p element
         let port = document.createElement('p');
-        port.classList.add('port');
+        port.classList.add('port', 'typewriter');
         let portNumber = Math.floor(Math.random() * 65535) + 1;
         console.log(portNumber);
         port.innerHTML = portNumber;
         row.appendChild(port);
 
         // add a small space
-        let spacer2 = document.createElement('div');
-        spacer2.classList.add('spacer');
-        row.appendChild(spacer2);
+        // let spacer2 = document.createElement('div');
+        // spacer2.classList.add('spacer');
+        // row.appendChild(spacer2);
 
 
         // In each row, add a p element with the class "protocol". Generate a random protocol and inject it into the p element
         let protocol = document.createElement('p');
-        protocol.classList.add('protocol');
+        protocol.classList.add('protocol', 'typewriter');
         let protocols = ['TCP', 'UDP'];
         let randomProtocol = protocols[Math.floor(Math.random() * protocols.length)];
         console.log(randomProtocol);
@@ -372,13 +372,13 @@ function fakeData() {
         row.appendChild(protocol);
 
         // add a small space
-        let spacer3 = document.createElement('div');
-        spacer3.classList.add('spacer');
-        row.appendChild(spacer3);
+        // let spacer3 = document.createElement('div');
+        // spacer3.classList.add('spacer');
+        // row.appendChild(spacer3);
 
         // In each row, add a p element with the class "size". Generate a random file size in bytes and inject it into the p element
         let size = document.createElement('p');
-        size.classList.add('size');
+        size.classList.add('size', 'typewriter');
         let fileSize = Math.floor(Math.random() * 100000000) + 1;
         console.log(fileSize);
         size.innerHTML = fileSize + ' bytes';

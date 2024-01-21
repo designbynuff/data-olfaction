@@ -149,6 +149,12 @@ body {
     align-items: center;
 }
 
+.row-packets {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: column;
+}
+
 .material {
     display: inline;
 }
@@ -222,6 +228,19 @@ video#bg-vid {
 
     box-shadow: -16px 16px 0px 0px rgba(0, 0, 0, 0.25);
 
+}
+
+.modal-content a {
+    color: #14025B;
+    text-decoration: none;
+    border-bottom: 1px dotted #14025B;
+}
+
+.modal-content a:hover,
+.modal-content a:focus {
+    background-color: #14025B;
+    padding: 0 2px;
+    color: #E1CEFF;
 }
 
 /* The Close Button */
