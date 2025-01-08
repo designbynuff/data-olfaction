@@ -28,7 +28,13 @@ body {
 .hero h1 {
     font-size: 4rem;
     line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 4rem;
 }
 
 .hero p {
@@ -54,7 +60,7 @@ body {
 
 .button {
     font-size: 1.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     margin-bottom: 1rem;
     border-radius: 4rem;
     background-color: #14025B;
