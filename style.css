@@ -21,14 +21,24 @@ body {
     margin: 4rem 0;
 }
 
+.sans h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
+}
+
 .hero {
     max-width: 60%;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 5rem;
     line-height: 1;
     margin-bottom: 0.5rem;
+    letter-spacing: -4px;
 }
 
 .hero h2 {
@@ -120,7 +130,6 @@ body {
     background-color: #14025B;
     color: #E1CEFF;
 } */
-
 
 .typewriter {
     overflow: hidden;
